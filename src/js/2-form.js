@@ -22,7 +22,13 @@ form.addEventListener('submit', event => {
     console.log('Please fill in email and message fields');
     return;
   }
-  console.log('Data submitted:', storedForm);
+
+  try {
+    const storedFormData = JSON.parse(localStorage.getItem(localStorageKey));
+    console.log('Data submitted:', storedFormData);
+  } catch (error) {
+    console.error('Error retrieving data from localStorage:', error);
+  }
 
   form.reset();
   localStorage.removeItem(localStorageKey);
