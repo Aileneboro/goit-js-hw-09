@@ -82,7 +82,6 @@ function createGalleryItem({ preview, original, description }) {
   image.classList.add('gallery-image');
   image.src = preview;
   image.alt = description;
-  image.dataset.source = original;
 
   link.appendChild(image);
   galleryItem.appendChild(link);
@@ -98,7 +97,6 @@ function createGallery(images) {
 createGallery(images);
 
 const options = {
-  captions: true,
   captionSelector: 'img',
   captionType: 'attr',
   captionsData: 'alt',
